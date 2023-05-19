@@ -9,14 +9,17 @@ def add_or_remove_cash(pet_shop, cash_int):
     pet_shop["admin"]["total_cash"] += cash_int
     return 
 
-# def add_or_remove_cash(pet_shop, cash_int):
-#     if cash_int < 0
-#         pet_shop["admin"]["total_cash"] =+ cash_int
-#     return 
+def get_pets_sold(pet_shop):
+    return pet_shop["admin"]["pets_sold"]
 
+def increase_pets_sold(pet_shop, sale_int):
+    pet_shop["admin"]["pets_sold"] += sale_int
+    return
 
 def find_pet_by_name(pet_shop, pet_name):
     for pet in pet_shop["pets"]:
         if pet["name"]== pet_name:
             return pet
+
+
 
