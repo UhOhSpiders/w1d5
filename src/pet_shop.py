@@ -59,16 +59,15 @@ def customer_can_afford_pet (customer, new_pet):
         return False
 
 def sell_pet_to_customer (pet_shop, pet, customer):
+    if pet not in pet_shop["pets"]:
+        return None
+    if customer["cash"] < pet["price"]:
+        return None
     customer["cash"] -= pet["price"]
     pet_shop["admin"]["total_cash"] += pet["price"]
     customer["pets"].append(pet)
     pet_shop["admin"]["pets_sold"] += len(customer["pets"])
-    # pet_shop["pets"].remove(pet)
 
-    # add new pet to customers pet list
-    
-    # increase pets sold by 1. pets sold += pets sold ?? 
-    # subtract price of pet from customer cash
-    # add price of pet to shop cash
+
 
 
